@@ -1,0 +1,44 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int getevensum(int n){
+    int r=0,es=0;
+    while(n>=0){
+        r=n%10;
+        if(r%2==0){
+            es=es+r;
+        }
+        n=n/10;
+    }
+    return es;
+}
+int getoddsum(int n){
+    int r=0,os=0;
+    while(n>=0){
+        r=n%10;
+        if(r%2==1){
+            os=os+r;
+        }
+        n=n/10;
+    }
+    return os;
+}
+int findpin(int a,int b,int c,int d){
+    if(d%2==0){
+        return (getevensum(a)+getevensum(b)+getevensum(c))-(getoddsum(a)+getoddsum(b)+getoddsum(c));
+    }
+    else{
+        return (getoddsum(a)+getoddsum(b)+getoddsum(c))-(getevensum(a)+getevensum(b)+getevensum(c));
+    }
+}
+int main()
+{
+    int a,b,c,d;
+    cin>>a;
+    cin>>b;
+    cin>>c;
+    cin>>d;
+    cout<<findpin(a,b,c,d);
+    return 0;
+}
+
