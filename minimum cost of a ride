@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() {
+	//Your code goes here
+	int n,nts, st,spt,y;
+	cin>>n>>nts>>st>>spt;
+	int x=n*st;
+	//cout<<x<<"\n";
+	if((n%nts)==0)
+	{
+		y=(n/nts)*spt;
+		//cout<<y<<"\n";
+	}
+	else{
+		int z=(n%nts);
+		y=min((n/nts)*spt+z*st,(n/nts+1)*spt);
+		
+	}
+	int M=min(x,y);
+	cout<<M;
+	return 0;
+}
